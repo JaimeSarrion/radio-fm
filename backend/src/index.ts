@@ -1,18 +1,20 @@
 import express, { Request, Response } from 'express';
 const RadioBrowser = require('radio-browser');
-
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
 
 app.get('/api/radio', async (req: Request, res: Response) => {
   try {
     const results: any = await RadioBrowser.searchStations({
-      language: 'spanish', // Cambia el idioma según tus preferencias
+      language: 'spanish',
       limit: 1
     });
 
-    // Envía la URL de transmisión de la primera estación encontrada como respuesta
     if (results.length > 0) {
       res.json({ url: results[0].url });
     } else {

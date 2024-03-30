@@ -1,13 +1,14 @@
+'use client';
+import RadioPlayer from '@/components/RadioPlayer';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 export default function Home() {
+  const queryClient = new QueryClient()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <video width="400" controls>
-        <source
-          src="https://25693.live.streamtheworld.com/LOS40_SC"
-          type="audio/mpeg"
-        />
-        Your browser does not support HTML video.
-      </video>
-    </main>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <RadioPlayer />
+      </QueryClientProvider>
+    </>
   );
 }
