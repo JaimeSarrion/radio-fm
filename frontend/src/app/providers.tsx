@@ -1,5 +1,6 @@
 'use client';
 
+import { NextUIProvider } from '@nextui-org/system';
 import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -39,6 +40,8 @@ export default function Providers({ children }: { children: ReactNode }) {
   const queryClient = getQueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <NextUIProvider>{children}</NextUIProvider>
+    </QueryClientProvider>
   );
 }
