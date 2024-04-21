@@ -1,0 +1,38 @@
+export interface RadioStation {
+    bitrate: number;
+    changeuuid: string;
+    clickcount: number;
+    clicktimestamp: string;
+    clicktimestamp_iso8601: string;
+    clicktrend: number;
+    codec: string;
+    country: string;
+    countrycode: string;
+    favicon: string;
+    geo_lat: number | null;
+    geo_long: number | null;
+    has_extended_info: boolean;
+    hls: number;
+    homepage: string;
+    iso_3166_2: string | null;
+    language: string;
+    languagecodes: string;
+    lastchangetime: string;
+    lastchangetime_iso8601: string;
+    lastcheckok: number;
+    lastcheckoktime: string;
+    lastcheckoktime_iso8601: string;
+    lastchecktime: string;
+    lastchecktime_iso8601: string;
+    lastlocalchecktime: string | null;
+    lastlocalchecktime_iso8601: string | null;
+    name: string;
+    serveruuid: string | null;
+    ssl_error: number;
+    state: string;
+    stationuuid: string;
+    tags: string;
+    url: string;
+    url_resolved: string;
+    votes: number;
+  }
