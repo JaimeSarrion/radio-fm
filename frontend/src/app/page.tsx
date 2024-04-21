@@ -1,14 +1,9 @@
-'use client';
-import RadioPlayer from '@/components/RadioPlayer';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import RadioPlayer from '@/components/RadioPlayer/RadioPlayer';
 
 export default function Home() {
-  const queryClient = new QueryClient()
   return (
     <>
-      <QueryClientProvider client={queryClient}>
         <RadioPlayer />
-      </QueryClientProvider>
     </>
   );
 }
